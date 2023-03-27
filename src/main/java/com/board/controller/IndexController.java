@@ -1,5 +1,7 @@
 package com.board.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,25 +14,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
 
 	@GetMapping()
-	public String Index(Model model) {
+	public String Index(HttpServletRequest request) {
 		
 		String returnUrl = "index";
 		
-		model.addAttribute("data", "Hi");
+		request.setAttribute("data", "Hi"); // == model.addAttribute
 		
 		System.out.println(returnUrl);
 		return returnUrl;
 	}
 	
 	@PostMapping("/result")
-	public String result(Model model, 
-			@RequestParam("value1") String val1,
-			@RequestParam("value2") String val2) {
+	public String result(HttpServletRequest request) {
 		
 		String returnUrl = "result";
 		
-		model.addAttribute("param1", val1);
-		model.addAttribute("param2", val2);
+		String param1 = request.getParameter("value1");
+		String param2 = request.getParameter("value2");
+		
+		request.setAttribute("param1", param1);
+		request.setAttribute("param2", param2);
 		
 		System.out.println(returnUrl);
 		return returnUrl;
