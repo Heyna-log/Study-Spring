@@ -17,4 +17,21 @@ public class BoardService {
 	public List<Board> selectList() {
 		return mapper.selectList();
 	}
+	
+	public List<Board> selectData(String id) {
+		return mapper.selectData(id);
+	}
+	
+	public void insertData(Board board) {
+		mapper.insertData(board);
+	}
+	
+	public void updateData(Board board) {
+		mapper.updateData(board);
+		System.out.println("update");
+	}
+	
+	public void deleteData(String id) {
+		mapper.deleteData(id);
+	}
 }

@@ -15,15 +15,21 @@
             <th>password</th>
             <th>name</th>
             <th>phone</th>
+            <th>VIEW</th>
         </tr>
         <c:forEach items="${list}" var="u">
-        <tr>
-            <td>${u.id}</td>
-            <td>${u.pw}</td>
-            <td>${u.name}</td>
-            <td>${u.phone}</td>
-        </tr>
+	        <tr>
+	            <td>${u.id}</td>
+	            <td>${u.pw}</td>
+	            <td>${u.name}</td>
+	            <td>${u.phone}</td>
+	            <td>
+	            	<input type="button" value="VIEW" onclick="location.href='/view?id=${u.id}'">
+	            </td>
+	        </tr>
         </c:forEach>
     </table>
+    <br>
+    <a href="/join">JOIN</a>
 </body>
 </html>

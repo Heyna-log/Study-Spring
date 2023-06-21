@@ -9,6 +9,13 @@ import com.board.model.Board;
 @Mapper
 public interface BoardMapper {
 
-	List<Board> selectList();
+	public List<Board> selectList();
 	
+	public List<Board> selectData(String id);
+	
+	public void insertData(Board board);
+	
+	public void updateData(Board board);
+	
+	public void deleteData(String id);
 }

@@ -5,4 +5,23 @@
 	<select id="selectList" resultType="com.board.model.Board">
 		select * from user
 	</select>
+	
+	<select id="selectData" parameterType="String" resultType="com.board.model.Board">
+		select * from user
+		where id = #{id}
+	</select>
+	
+	<insert id="insertData" parameterType="com.board.model.Board">
+		insert into user (id, pw, name, phone) 
+		values (#{id}, #{pw}, #{name}, #{phone})
+	</insert>
+	
+	<update id="updateData" parameterType="com.board.model.Board">
+		update user set id = #{id}, pw = #{pw}, name = #{name}, phone = #{phone} 
+		where id = #{id}
+	</update>
+	
+	<delete id="deleteData" parameterType="String">
+		delete from user where id = #{id}
+	</delete>
 </mapper>
