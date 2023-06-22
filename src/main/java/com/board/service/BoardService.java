@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 import com.board.mapper.BoardMapper;
 import com.board.model.Board;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class BoardService {
 	
-	@Autowired
-	private BoardMapper mapper;
+	private final BoardMapper mapper;
 	
 	public List<Board> selectList() {
 		return mapper.selectList();
