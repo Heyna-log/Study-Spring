@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,12 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.board.model.Board;
 import com.board.service.BoardService;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/update")
 public class UpdateController {
 
-	@Autowired
-	private BoardService boardService;
+	private final BoardService boardService;
 	
 	@GetMapping("/{id}")
 	public String update(@PathVariable("id") String id, Model model) {
