@@ -34,6 +34,6 @@ public class CreateSampleDataTest {
 			mapper.insertData(board);
 		}
 		
-		Assertions.assertThat(mapper.selectData(100).get(0).getId()).isEqualTo(100);
+		Assertions.assertThat(mapper.selectData(100).getId()).isEqualTo(100);
 	}
 }

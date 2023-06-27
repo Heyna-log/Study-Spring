@@ -11,7 +11,7 @@ public interface BoardMapper {
 
 	public List<Board> selectList();
 	
-	public List<Board> selectData(int id);
+	public Board selectData(int id);
 	
 	public void insertData(Board board);
 	

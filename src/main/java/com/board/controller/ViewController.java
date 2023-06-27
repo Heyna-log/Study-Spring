@@ -22,10 +22,10 @@ public class ViewController {
 
 	@GetMapping()
 	public String select(Model model, @RequestParam("id") int id) {
-		List<Board> userList = boardService.selectData(id);
+		Board post = boardService.selectData(id);
 
-		System.out.println(userList);
-		model.addAttribute("list", userList);
+		System.out.println(post);
+		model.addAttribute("post", post);
 		return "view";
 	}
 }

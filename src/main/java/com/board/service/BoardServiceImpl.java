@@ -21,7 +21,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<Board> selectData(int id) {
+	public Board selectData(int id) {
 		return mapper.selectData(id);
 	}
 	

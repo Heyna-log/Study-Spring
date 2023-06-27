@@ -16,17 +16,14 @@
 	            <th>writer</th>
 	            <th>content</th>
 	        </tr>
-	        <c:forEach items="${list}" var="u">
-	        	<input type="hidden" name="id" value="${u.id}">
-		        <tr>
-		            <th><input type="text" name="title" value="${u.title}"></th>
-		            <th><input type="text" name="writer" value="${u.writer}"></th>
-		            <th><input type="text" name="content" value="${u.content}"></th>
-		        </tr>
-	        </c:forEach>
+	        <tr>
+	            <th><input type="text" name="title" value="${post.title}"></th>
+	            <th><input type="text" name="writer" value="${post.writer}"></th>
+	            <th><input type="text" name="content" value="${post.content}"></th>
+	        </tr>
 	    </table>
+       	<input type="hidden" name="id" value="${post.id}">
 	    <button type="submit">UPDATE !</button>
-	    <!-- <input type="button" name="" value="삭제" onclick="location.href='userList/delete/${id}'"> -->
 	</form>
 </body>
 </html>

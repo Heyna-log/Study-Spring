@@ -18,18 +18,16 @@
 	            <th>Registration Date</th>
 	            <th>Update Date</th>
 	        </tr>
-	        <c:forEach items="${list}" var="u">
-	        	<c:set var="id" value="${u.id}"></c:set>
-		        <tr>
-		            <td>${u.title}</td>
-		            <td>${u.writer}</td>
-		            <td>${u.content}</td>
-		            <td>${u.regDate}</td>
-		            <td>${u.updateDate}</td>
-		        </tr>
-			    <input type="hidden" name="id" value="${u.id}">
-	        </c:forEach>
+        	<c:set var="id" value="${post.id}"></c:set>
+	        <tr>
+	            <td>${post.title}</td>
+	            <td>${post.writer}</td>
+	            <td>${post.content}</td>
+	            <td>${post.regDate}</td>
+	            <td>${post.updateDate}</td>
+	        </tr>
 	    </table>
+	    <input type="hidden" name="id" value="${post.id}">
 	    <input type="button" value="수정" onclick="location.href='/update/${id}'">
 	    <input type="button" value="삭제" onclick="location.href='/delete/${id}'">
 	</form>

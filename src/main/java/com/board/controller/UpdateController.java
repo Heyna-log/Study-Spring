@@ -25,10 +25,10 @@ public class UpdateController {
 	
 	@GetMapping("/{id}")
 	public String update(@PathVariable("id") int id, Model model) {
-		List<Board> boardList = boardService.selectData(id);
+		Board post = boardService.selectData(id);
 
 		System.out.println("id: " + id);
-		model.addAttribute("list", boardList);
+		model.addAttribute("post", post);
 		return "update";
 	}
 	
