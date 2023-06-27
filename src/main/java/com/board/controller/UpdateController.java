@@ -24,17 +24,16 @@ public class UpdateController {
 	private final BoardService boardService;
 	
 	@GetMapping("/{id}")
-	public String update(@PathVariable("id") String id, Model model) {
-		List<Board> userList = boardService.selectData(id);
+	public String update(@PathVariable("id") int id, Model model) {
+		List<Board> boardList = boardService.selectData(id);
 
 		System.out.println("id: " + id);
-		System.out.println(userList);
-		model.addAttribute("list", userList);
+		model.addAttribute("list", boardList);
 		return "update";
 	}
 	
 	@PostMapping()
-	public String updateUser(HttpServletRequest request, Board board) {
+	public String updatePost(HttpServletRequest request, Board board) {
 		String id = request.getParameter("id");
 		System.out.println("id : " + id);
 		
@@ -42,6 +41,6 @@ public class UpdateController {
 		System.out.println("update");
 		
 		System.out.println("board : " + board);
-		return "redirect:/userList";
+		return "redirect:/boardList";
 	}
 }

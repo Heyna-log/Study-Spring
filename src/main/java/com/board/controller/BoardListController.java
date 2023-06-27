@@ -13,15 +13,15 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-public class UserController {
+public class BoardListController {
 	
 	private final BoardService boardService;
 
-	@GetMapping("/userList")
-	public String userList(Model model) {
-		List<Board> userList = boardService.selectList();
-		model.addAttribute("list", userList);
-		return "userList";
+	@GetMapping("/boardList")
+	public String boardList(Model model) {
+		List<Board> boardList = boardService.selectList();
+		model.addAttribute("list", boardList);
+		return "boardList";
 	}
 
 }

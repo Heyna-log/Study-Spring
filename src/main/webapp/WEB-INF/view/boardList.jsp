@@ -5,24 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>USER LIST</title>
+<title>BOARD LIST</title>
 </head>
 <body>
-	<h1>USER LIST</h1>
+	<h1>BOARD LIST</h1>
     <table>
         <tr>
-            <th>id</th>
-            <th>password</th>
-            <th>name</th>
-            <th>phone</th>
+            <th>Title</th>
+            <th>Writer</th>
+            <th>Content</th>
+            <th>Registration Date</th>
             <th>VIEW</th>
         </tr>
         <c:forEach items="${list}" var="u">
 	        <tr>
-	            <td>${u.id}</td>
-	            <td>${u.pw}</td>
-	            <td>${u.name}</td>
-	            <td>${u.phone}</td>
+	            <td>${u.title}</td>
+	            <td>${u.writer}</td>
+	            <td>${u.content}</td>
+	            <td>${u.regDate}</td>
 	            <td>
 	            	<input type="button" value="VIEW" onclick="location.href='/view?id=${u.id}'">
 	            </td>
@@ -30,6 +30,6 @@
         </c:forEach>
     </table>
     <br>
-    <a href="/join">JOIN</a>
+    <a href="/create">CREATE POST</a>
 </body>
 </html>

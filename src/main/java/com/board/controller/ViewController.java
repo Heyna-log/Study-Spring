@@ -21,7 +21,7 @@ public class ViewController {
 	private final BoardService boardService;
 
 	@GetMapping()
-	public String select(Model model, @RequestParam("id") String id) {
+	public String select(Model model, @RequestParam("id") int id) {
 		List<Board> userList = boardService.selectData(id);
 
 		System.out.println(userList);

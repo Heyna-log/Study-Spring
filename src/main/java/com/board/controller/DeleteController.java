@@ -17,10 +17,10 @@ public class DeleteController {
 	private final BoardService boardService;
 	
 	@GetMapping("/{id}")
-	public String deleteUser(@PathVariable("id") String id) {
+	public String deletePost(@PathVariable("id") int id) {
 		boardService.deleteData(id);
 		System.out.println("delete");
 		
-		return "redirect:/userList";
+		return "redirect:/boardList";
 	}
 }

@@ -3,25 +3,30 @@
 
 <mapper namespace="com.board.mapper.BoardMapper">
 	<select id="selectList" resultType="com.board.model.Board">
-		select * from user
+		select * from board
 	</select>
 	
-	<select id="selectData" parameterType="String" resultType="com.board.model.Board">
-		select * from user
+	<select id="selectData" parameterType="int" resultType="com.board.model.Board">
+		select * from board
 		where id = #{id}
 	</select>
 	
 	<insert id="insertData" parameterType="com.board.model.Board">
-		insert into user (id, pw, name, phone) 
-		values (#{id}, #{pw}, #{name}, #{phone})
+		insert into board (title, writer, content, regDate) 
+		values (#{title}, #{writer}, #{content}, now())
 	</insert>
 	
 	<update id="updateData" parameterType="com.board.model.Board">
-		update user set id = #{id}, pw = #{pw}, name = #{name}, phone = #{phone} 
+		update board set 
+			title = #{title}, 
+			writer = #{writer}, 
+			content = #{content}, 
+			updateDate = now()
 		where id = #{id}
 	</update>
 	
-	<delete id="deleteData" parameterType="String">
-		delete from user where id = #{id}
+	<delete id="deleteData" parameterType="int">
+		delete from board 
+		where id = #{id}
 	</delete>
 </mapper>

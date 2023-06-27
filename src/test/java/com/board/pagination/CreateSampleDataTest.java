@@ -28,13 +28,12 @@ public class CreateSampleDataTest {
 		Board board = new Board();
 		
 		for (int i = 1; i <= 100; i++) {
-			board.setId("test"+i);
-			board.setPw("test"+i);
-			board.setName("test"+i);
-			board.setPhone("010-test"+i);
+			board.setTitle("test"+i);
+			board.setWriter("test"+i);
+			board.setContent("test"+i);
 			mapper.insertData(board);
 		}
 		
-		Assertions.assertThat(mapper.selectData("test100").get(0).getName()).isEqualTo("test100");
+		Assertions.assertThat(mapper.selectData(100).get(0).getId()).isEqualTo(100);
 	}
 }

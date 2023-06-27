@@ -2,7 +2,6 @@ package com.board.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.board.mapper.BoardMapper;
@@ -22,7 +21,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<Board> selectData(String id) {
+	public List<Board> selectData(int id) {
 		return mapper.selectData(id);
 	}
 	
@@ -37,7 +36,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public void deleteData(String id) {
+	public void deleteData(int id) {
 		mapper.deleteData(id);
 	}
 }

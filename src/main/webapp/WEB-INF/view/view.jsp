@@ -12,18 +12,20 @@
 	<form action="" method="get">
 	    <table>
 	        <tr>
-	            <th>id</th>
-	            <th>password</th>
-	            <th>name</th>
-	            <th>phone</th>
+	            <th>title</th>
+	            <th>writer</th>
+	            <th>content</th>
+	            <th>Registration Date</th>
+	            <th>Update Date</th>
 	        </tr>
 	        <c:forEach items="${list}" var="u">
 	        	<c:set var="id" value="${u.id}"></c:set>
 		        <tr>
-		            <td>${u.id}</td>
-		            <td>${u.pw}</td>
-		            <td>${u.name}</td>
-		            <td>${u.phone}</td>
+		            <td>${u.title}</td>
+		            <td>${u.writer}</td>
+		            <td>${u.content}</td>
+		            <td>${u.regDate}</td>
+		            <td>${u.updateDate}</td>
 		        </tr>
 			    <input type="hidden" name="id" value="${u.id}">
 	        </c:forEach>

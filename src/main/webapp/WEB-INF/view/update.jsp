@@ -12,21 +12,20 @@
 	<form action="/update" method="POST">
 	    <table>
 	        <tr>
-	            <th>id</th>
-	            <th>password</th>
-	            <th>name</th>
-	            <th>phone</th>
+	            <th>title</th>
+	            <th>writer</th>
+	            <th>content</th>
 	        </tr>
 	        <c:forEach items="${list}" var="u">
+	        	<input type="hidden" name="id" value="${u.id}">
 		        <tr>
-		            <th><input type="text" name="id" value="${u.id}"></th>
-		            <th><input type="password" name="pw" value="${u.pw}"></th>
-		            <th><input type="text" name="name" value="${u.name}"></th>
-		            <th><input type="text" name="phone" value="${u.phone}"></th>
+		            <th><input type="text" name="title" value="${u.title}"></th>
+		            <th><input type="text" name="writer" value="${u.writer}"></th>
+		            <th><input type="text" name="content" value="${u.content}"></th>
 		        </tr>
 	        </c:forEach>
 	    </table>
-	    <button type="submit">Update !</button>
+	    <button type="submit">UPDATE !</button>
 	    <!-- <input type="button" name="" value="삭제" onclick="location.href='userList/delete/${id}'"> -->
 	</form>
 </body>

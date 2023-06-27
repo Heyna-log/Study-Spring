@@ -1,5 +1,7 @@
 package com.board.model;
 
+import java.sql.Timestamp;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,8 +10,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Board {
-	private String id;
-	private String pw;
-	private String name;
-	private String phone;
+	private int id;
+	private String title;
+	private String writer;
+	private String content;
+	private Timestamp regDate;
+	private Timestamp updateDate;
 }

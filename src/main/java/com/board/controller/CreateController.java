@@ -12,21 +12,21 @@ import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/join")
-public class JoinController {
+@RequestMapping("/create")
+public class CreateController {
 	
 	private final BoardService boardService;
 	
 	@GetMapping()
-	public String join() {
-		return "join";
+	public String create() {
+		return "create";
 	}
 	
 	@PostMapping()
-	public String joinUser(Board board) {
+	public String createPost(Board board) {
 		boardService.insertData(board);
 		
-		return "redirect:/userList";
+		return "redirect:/boardList";
 	}
 
 }

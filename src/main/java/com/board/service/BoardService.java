@@ -8,11 +8,11 @@ public interface BoardService {
 	
 	public List<Board> selectList();
 	
-	public List<Board> selectData(String id);
+	public List<Board> selectData(int id);
 	
 	public void insertData(Board board);
 	
 	public void updateData(Board board);
 	
-	public void deleteData(String id);
+	public void deleteData(int id);
 }

@@ -16,6 +16,6 @@
 		<br>
 		<button type="submit">Check Parameters !</button>
 	</form>
-	<a href="/userList">USER LIST</a>
+	<a href="/boardList">BOARD LIST</a>
 </body>
 </html>
