@@ -4,6 +4,12 @@
 <mapper namespace="com.board.mapper.BoardMapper">
 	<select id="selectList" resultType="com.board.model.Board">
 		select * from board
+		limit #{startList}, #{listSize}
+	</select>
+	
+	<select id="getBoardListCount" resultType="int">
+		select count(*) as listCnt
+		from board
 	</select>
 	
 	<select id="selectData" parameterType="int" resultType="com.board.model.Board">

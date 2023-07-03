@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.board.mapper.BoardMapper;
 import com.board.model.Board;
+import com.board.model.Pagination;
 
 import lombok.RequiredArgsConstructor;
 
@@ -16,8 +17,13 @@ public class BoardServiceImpl implements BoardService {
 	private final BoardMapper mapper;
 	
 	@Override
-	public List<Board> selectList() {
-		return mapper.selectList();
+	public List<Board> selectList(Pagination pagination) {
+		return mapper.selectList(pagination);
+	}
+	
+	@Override
+	public int getBoardListCount() {
+		return mapper.getBoardListCount();
 	}
 	
 	@Override
