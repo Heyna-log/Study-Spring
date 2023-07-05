@@ -3,13 +3,13 @@ package com.board.service;
 import java.util.List;
 
 import com.board.model.Board;
-import com.board.model.Pagination;
+import com.board.model.Search;
 
 public interface BoardService {
 	
-	public List<Board> selectList(Pagination pagination);
+	public List<Board> selectList(Search search);
 	
-	public int getBoardListCount();
+	public int getBoardListCount(Search search);
 	
 	public Board selectData(int id);
 	

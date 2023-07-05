@@ -4,12 +4,34 @@
 <mapper namespace="com.board.mapper.BoardMapper">
 	<select id="selectList" resultType="com.board.model.Board">
 		select * from board
+		<trim prefix="where">
+			<if test="searchType.equals('title') and keyword != null and keyword != ''">
+				title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType.equals('content') and keyword != null and keyword != ''">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType.equals('writer') and keyword != null and keyword != ''">
+				writer LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</trim>
 		limit #{startList}, #{listSize}
 	</select>
 	
 	<select id="getBoardListCount" resultType="int">
 		select count(*) as listCnt
 		from board
+		<trim prefix="where">
+			<if test="searchType.equals('title') and keyword != null and keyword != ''">
+				title LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType.equals('content') and keyword != null and keyword != ''">
+				content LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType.equals('writer') and keyword != null and keyword != ''">
+				writer LIKE CONCAT('%', #{keyword}, '%')
+			</if>
+		</trim>
 	</select>
 	
 	<select id="selectData" parameterType="int" resultType="com.board.model.Board">
