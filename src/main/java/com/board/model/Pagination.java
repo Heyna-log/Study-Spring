@@ -54,5 +54,10 @@ public class Pagination {
 		// 다음 버튼 상태
 		// 현재 페이지 범위 끝 번호가 전체 페이지 개수보다 크거나 같을 때 
 		this.next = endPage >= pageCnt ? false : true;
+		
+		// 현재 페이지 범위 끝 번호가 전체 페이지 개수보다 클 때
+		if (endPage > pageCnt) {
+			this.endPage = this.pageCnt;
+		}
 	}
 }
