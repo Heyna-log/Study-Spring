@@ -1,4 +1,4 @@
-package com.board.controller;
+package com.board.controller.board;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.board.model.Board;
-import com.board.service.BoardService;
+import com.board.service.board.BoardService;
 
 import lombok.RequiredArgsConstructor;
 

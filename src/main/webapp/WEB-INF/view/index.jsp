@@ -16,6 +16,7 @@
 		<br>
 		<button type="submit">Check Parameters !</button>
 	</form>
+	<a href="/joinForm">JOIN</a>
 	<a href="/boardList">BOARD LIST</a>
 </body>
 </html>
